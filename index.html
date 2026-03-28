@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<!-- ================================================================
+     Authentic Tech — Site vitrine
+     ================================================================
+     FICHIERS DU PROJET :
+     ├── index.html          ← Cette page (structure HTML)
+     ├── css/
+     │   └── style.css       ← Tous les styles visuels
+     ├── js/
+     │   ├── main.js         ← Interactions, formulaire, WhatsApp
+     │   ├── hero-3d.js      ← Animation 3D globe hero
+     │   └── team-3d.js      ← Animation 3D équipe
+     └── images/
+         └── LISEZ-MOI.txt   ← Guide pour placer vos images
+
+     ⚙ CONFIGURATION RAPIDE :
+     1. js/main.js    → remplacez VOTRE_NUMERO (WhatsApp)
+     2. index.html    → remplacez YOUR_FORM_ID (Formspree)
+     3. index.html    → remplacez YOUR_FORM_ID dans action=
+     4. images/       → placez vos photos selon LISEZ-MOI.txt
+     5. Cherchez 📌   → repère tous les emplacements à compléter
+     ================================================================ -->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Authentic Tech — Solutions Digitales & Communication Visuelle</title>
+  <meta name="description" content="Authentic Tech conçoit des sites web, applications mobiles, identités visuelles et stratégies de communication pour vous aider à grandir en ligne." />
+
+  <!-- Google Fonts: Cormorant Garamond (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Feuille de styles principale -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<body>
+
+<!-- ===================================================
+     HEADER
+     =================================================== -->
+<header id="main-header">
+  <div class="logo-wrap">
+    <!--
+      EMPLACEMENT LOGO PRINCIPAL :
+      Option recommandée → remplacez .logo-mark + .logo-text par :
+        <img src="images/logo.svg" alt="Authentic Tech" height="36" />
+      ou conservez le logo textuel stylisé ci-dessous.
+      Le logo doit être en SVG ou PNG transparent, lisible sur fond noir.
+    -->
+    <!-- 📌 LOGO HEADER : remplacez les 2 lignes ci-dessous par <img src="images/logo.svg" alt="Authentic Tech" height="36" /> -->
+    <img src="images/LOGO_AUTHENTIC-removebg-preview.png" alt="Authentic Tech" height="80" class="logo-mark" />
+  </div>
+  <nav>
+    <a href="#about">À propos</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Réalisations</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="btn-nav">Démarrer un projet</a>
+  </nav>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav">
+  <a href="#about" onclick="closeMobileNav()">À propos</a>
+  <a href="#services" onclick="closeMobileNav()">Services</a>
+  <a href="#portfolio" onclick="closeMobileNav()">Réalisations</a>
+  <a href="#contact" onclick="closeMobileNav()">Contact</a>
+  <a href="#contact" onclick="closeMobileNav()">Démarrer un projet →</a>
+</nav>
+
+<!-- ===================================================
+     HERO
+     =================================================== -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines">
+    <!-- Subtle geometric SVG decoration -->
+    <svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="300" cy="300" r="250" stroke="#c49e52" stroke-width="0.5"/>
+      <circle cx="300" cy="300" r="180" stroke="#c49e52" stroke-width="0.5"/>
+      <circle cx="300" cy="300" r="110" stroke="#c49e52" stroke-width="0.5"/>
+      <line x1="50" y1="300" x2="550" y2="300" stroke="#c49e52" stroke-width="0.5"/>
+      <line x1="300" y1="50" x2="300" y2="550" stroke="#c49e52" stroke-width="0.5"/>
+      <line x1="127" y1="127" x2="473" y2="473" stroke="#c49e52" stroke-width="0.5"/>
+      <line x1="473" y1="127" x2="127" y2="473" stroke="#c49e52" stroke-width="0.5"/>
+    </svg>
+  </div>
+
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content reveal">
+        <div class="hero-badge">Solutions Digitales & Créatives</div>
+        <h1 class="hero-title">
+          Donnez à votre marque<br/>
+          la <em>présence digitale</em><br/>
+          <strong>qu'elle mérite</strong>
+        </h1>
+        <p class="hero-desc">
+          Authentic Tech conçoit des expériences digitales soignées — sites web, applications mobile, identités visuelles — pour transformer votre vision en résultats concrets. Nous rendons votre marque visible, crédible et mémorable.
+        </p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn-primary">
+            Démarrer votre projet
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#services" class="btn-ghost">Découvrir nos services</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num" data-count="50" data-suffix="+">0</span>
+            <span class="stat-label">Projets réalisés</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" data-count="98" data-suffix="%">0</span>
+            <span class="stat-label">Clients satisfaits</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num" data-count="4,5" data-suffix="★">0</span>
+            <span class="stat-label">Note moyenne</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal" style="transition-delay:0.2s">
+        <div class="hero-visual-frame">
+          <!-- ══════════════════════════════════════════════════
+               📌 ANIMATION 3D HERO (globe + services)
+               ══════════════════════════════════════════════════
+               Cette animation Three.js peut être remplacée par une image.
+               Pour utiliser une photo à la place, supprimez tout le bloc
+               <div id="hero-canvas-wrap">...</div> et remplacez par :
+
+               <img src="images/hero.webp"
+                    alt="Authentic Tech — Solutions Digitales"
+                    style="width:100%; display:block; object-fit:cover;" />
+
+               Dimensions image : 600×480px minimum
+               Format conseillé : WebP, tons sombres ou dorés
+          ══════════════════════════════════════════════════ -->
+          <div class="hero-animation">
+              <lottie-player 
+                src="assets/AI_bot.json"
+                background="transparent"
+                speed="1"
+                style="width: 400px; height: 400px;"
+                loop
+                autoplay>
+              </lottie-player>
+          </div>
+        </div>
+        <div class="hero-badge-float badge-float-1">
+          <div class="dot"></div>
+          <span>Projet en cours…</span>
+        </div>
+        <div class="hero-badge-float badge-float-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c49e52" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Site livré avec succès</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================
+     ABOUT
+     =================================================== -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="about-img-wrap">
+          <!-- ══════════════════════════════════════════════════
+               📌 ANIMATION 3D ÉQUIPE (personnages autour d'une table)
+               ══════════════════════════════════════════════════
+               Pour remplacer cette animation par une vraie photo d'équipe,
+               supprimez tout le bloc <div id="team-canvas-wrap">...</div>
+               et remplacez par :
+
+               <img src="images/equipe.webp"
+                    alt="Équipe Authentic Tech"
+                    style="width:100%; height:100%; object-fit:cover; display:block;" />
+
+               Dimensions : 480×600px minimum (ratio portrait 4:5)
+               Idée photo : équipe souriante dans votre espace de travail
+          ══════════════════════════════════════════════════ -->
+          <div class="hero-animation">
+              <lottie-player 
+                src="assets/Be Bold.json"
+                background="transparent"
+                speed="1"
+                style="width: 400px; height: 400px;"
+                loop
+                autoplay>
+              </lottie-player>
+          </div>
+        </div>
+        <div class="about-accent"></div>
+        <div class="about-floating-card">
+          <div class="number">7+</div>
+          <div class="label">ans d'expérience</div>
+        </div>
+      </div>
+
+      <div class="about-content reveal" style="transition-delay:0.15s">
+        <span class="tag">À propos</span>
+        <h2 class="section-title">
+          Nous créons le digital<br/>
+          <em>qui travaille pour vous</em>
+        </h2>
+        <div class="divider"></div>
+        <p class="section-sub">
+          Authentic Tech est une agence digitale spécialisée dans la création de solutions web, mobiles et visuelles pour des entrepreneurs, TPE et PME qui souhaitent rayonner en ligne. Notre approche : un travail sur-mesure, un dialogue sincère et des résultats mesurables.
+        </p>
+        <ul class="values-list">
+          <li>Chaque projet est unique — nous écoutons avant de créer</li>
+          <li>Des solutions taillées pour votre marché et vos objectifs</li>
+          <li>Un accompagnement de A à Z</li>
+          <li>Livraisons respectées, qualité garantie</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================
+     SERVICES
+     =================================================== -->
+<section id="services">
+  <div class="container">
+    <div class="services-header reveal">
+      <span class="tag">Nos services</span>
+      <h2 class="section-title">Tout ce qu'il faut pour<br/><em>briller en ligne</em></h2>
+      <div class="divider" style="margin: 20px auto 16px;"></div>
+      <p class="section-sub">Des solutions conçues pour chaque étape de votre développement digital, de la première impression à la fidélisation client.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- ══════════════════════════════════════════════════
+           📌 SERVICE 1 : SITE VITRINE
+           ══════════════════════════════════════════════════
+           Ajoutez votre image en remplaçant url('') par :
+           url('images/service-vitrine.webp')
+           
+           Description idéale : Écran ordinateur affichant un beau site, mockup multi-device
+           Dimensions : 800×500px minimum, format WebP
+           Conseil : image avec tons sombres pour lisibilité du texte
+           Idée photo : bureau avec ordinateur affichant un beau site web,
+           maquette sur écran, ou photo lifestyle digitale.
+           Format recommandé : 600×420px minimum, WebP, tons sombres préférables.
+           ============================================================ -->
+      <div class="service-card reveal"
+           style="background-image: url('images/SITE\ WEB.jpeg'); background-color: #0f0f18;">
+        <div class="service-card-overlay"></div>
+        <span class="service-num">01</span>
+        <div class="service-body">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+          </div>
+          <h3 class="service-title">Site Vitrine</h3>
+          <p class="service-desc">Votre site vitrine, c'est votre carte de visite permanente sur internet. Nous concevons des sites élégants, rapides et convaincants qui donnent envie à vos visiteurs de vous contacter dès la première visite. Résultat : une image professionnelle qui inspire confiance et génère des opportunités.</p>
+          <a href="#contact" class="service-link">
+            En savoir plus
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           SERVICE 2 : SITE E-COMMERCE
+           IMAGE DE FOND : remplacez le style background-image.
+           Idée photo : boutique en ligne sur écran, paiement mobile,
+           colis ou produits joliment mis en scène.
+           Format : 600×420px min, WebP.
+           ============================================================ -->
+      <div class="service-card reveal" style="transition-delay:0.08s;
+           background-image: url('images/E-COMMERCE.jpeg'); background-color: #0d1014;">
+        <div class="service-card-overlay"></div>
+        <span class="service-num">02</span>
+        <div class="service-body">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          </div>
+          <h3 class="service-title">Site E-commerce</h3>
+          <p class="service-desc">Vendez vos produits ou services 24h/24, 7j/7 — même pendant que vous dormez. Nous créons des boutiques en ligne fluides, sécurisées et optimisées pour transformer vos visiteurs en acheteurs. Paiement en ligne, gestion des stocks, commandes simplifiées : tout est inclus.</p>
+          <a href="#contact" class="service-link">
+            En savoir plus
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           SERVICE 3 : APPLICATION MOBILE
+           IMAGE DE FOND : remplacez le style background-image.
+           Idée photo : smartphone tenu en main affichant une app,
+           ou mockup multi-devices sur fond sombre.
+           Format : 600×420px min, WebP.
+           ============================================================ -->
+      <div class="service-card reveal" style="transition-delay:0.16s;
+           background-image: url('images/APP\ MOBILE.jpeg'); background-color: #0b0f16;">
+        <div class="service-card-overlay"></div>
+        <span class="service-num">03</span>
+        <div class="service-body">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <h3 class="service-title">Application Mobile</h3>
+          <p class="service-desc">Une application mobile sur mesure pour être dans la poche de vos clients. Que ce soit pour fidéliser, simplifier un service ou automatiser un processus, nous concevons des applications intuitives disponibles sur iOS et Android. Votre marque, toujours à portée de main.</p>
+          <a href="#contact" class="service-link">
+            En savoir plus
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           SERVICE 4 : COMMUNITY MANAGER
+           IMAGE DE FOND : remplacez le style background-image.
+           Idée photo : quelqu'un photographiant pour Instagram,
+           grille de posts réseaux sociaux, ou téléphone avec feed.
+           Format : 600×420px min, WebP.
+           ============================================================ -->
+      <div class="service-card reveal" style="transition-delay:0.24s;
+           background-image: url('images/cm.jpg'); background-color: #100c14;">
+        <div class="service-card-overlay"></div>
+        <span class="service-num">04</span>
+        <div class="service-body">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <h3 class="service-title">Community Manager</h3>
+          <p class="service-desc">Vos réseaux sociaux sont votre vitrine la plus vivante. Nous prenons en main votre présence sur Instagram, Facebook, LinkedIn et plus encore — publications régulières, contenus engageants, interaction avec votre communauté. Résultat : une audience qui grandit et une marque qui inspire.</p>
+          <a href="#contact" class="service-link">
+            En savoir plus
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           SERVICE 5 : LOGO & AFFICHE
+           IMAGE DE FOND : remplacez le style background-image.
+           Idée photo : table créative avec croquis, moodboard, stylos,
+           ou présentation d'un logo sur fond sombre/neutre.
+           Format : 600×420px min, WebP.
+           ============================================================ -->
+      <div class="service-card reveal" style="transition-delay:0.32s;
+           background-image: url('images/LOGO\ ET\ AFFICHE.jpeg'); background-color: #130e0a;">
+        <div class="service-card-overlay"></div>
+        <span class="service-num">05</span>
+        <div class="service-body">
+          <div class="service-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3 class="service-title">Logo & Affiche</h3>
+          <p class="service-desc">Un logo qui vous ressemble, une affiche qui se remarque. Nous créons votre identité visuelle de A à Z — logo professionnel, palette de couleurs, typographie, supports print et digitaux. Parce qu'une belle identité, ça change tout.</p>
+          <a href="#contact" class="service-link">
+            En savoir plus
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================
+     WHY AUTHENTIC TECH
+     =================================================== -->
+<section id="why">
+  <div class="container">
+    <div class="why-grid">
+      <div>
+        <span class="tag">Pourquoi nous choisir</span>
+        <h2 class="section-title reveal">
+          Plus qu'une agence,<br/>
+          <em>un partenaire</em><br/>
+          de confiance
+        </h2>
+        <div class="divider reveal"></div>
+
+        <!-- Process -->
+        <div class="process-steps reveal">
+          <div class="process-step">
+            <div class="step-num">1</div>
+            <div>
+              <div class="step-title">Échange & Découverte</div>
+              <div class="step-desc">Nous prenons le temps de comprendre votre activité, vos clients et vos ambitions avant de proposer quoi que ce soit.</div>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">2</div>
+            <div>
+              <div class="step-title">Conception Sur-Mesure</div>
+              <div class="step-desc">Chaque création est unique et pensée pour votre marque. Zéro template générique, 100% personnalisé.</div>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">3</div>
+            <div>
+              <div class="step-title">Développement & Tests</div>
+              <div class="step-desc">Nous construisons votre projet avec rigueur, en vous tenant informé à chaque étape clé.</div>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">4</div>
+            <div>
+              <div class="step-title">Livraison & Suivi</div>
+              <div class="step-desc">Mise en ligne, transfert des accès et support après livraison. Nous ne disparaissons pas une fois le projet terminé.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial -->
+        <div class="why-testimonial reveal">
+          <p class="testimonial-text">
+            Authentic Tech a transformé notre présence en ligne en quelques semaines. Le site est beau, rapide, et nos clients nous le disent. Je recommande sans hésiter.
+          </p>
+          <div class="testimonial-author">— Marie K., Fondatrice • Boutique Mode</div>
+        </div>
+      </div>
+
+      <div class="why-visual reveal" style="transition-delay:0.15s">
+        <!--
+          EMPLACEMENT IMAGE "POURQUOI AUTHENTIC TECH" :
+          Idée : infographie de processus, dashboard analytics,
+          graphique montrant la croissance d'un client, ou photo
+          symbolisant la confiance et la collaboration.
+          Format : paysage ou carré, min 520×420px.
+          Remplacez .why-img-placeholder par :
+          <img src="images/processus.webp" alt="Notre processus" style="width:100%;height:100%;object-fit:cover;display:block;" />
+        -->
+        <div class="hero-animation">
+              <lottie-player 
+                src="assets/Good investment makes it reach the target.json"
+                background="transparent"
+                speed="1"
+                style="width: 400px; height: 400px;"
+                loop
+                autoplay>
+              </lottie-player>
+        </div>
+
+        <div class="why-features" style="margin-top:28px">
+          <div class="why-feature">
+            <div class="why-feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <div class="why-feature-title">Qualité garantie</div>
+              <div class="why-feature-desc">Nous ne livrons que des projets dont nous sommes fiers. Standards élevés, révisions incluses.</div>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="why-feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <div class="why-feature-title">Délais respectés</div>
+              <div class="why-feature-desc">Votre temps est précieux. Nous planifions sérieusement et livrons dans les délais convenus.</div>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="why-feature-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <div>
+              <div class="why-feature-title">Relation humaine</div>
+              <div class="why-feature-desc">Un interlocuteur dédié, une communication claire et un suivi personnalisé tout au long du projet.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================
+     PORTFOLIO
+     =================================================== -->
+<section id="portfolio">
+  <div class="container container--wide">
+    <div class="portfolio-header reveal">
+      <div>
+        <span class="tag">Nos réalisations</span>
+        <h2 class="section-title">Ce que nous avons<br/><em>créé ensemble</em></h2>
+      </div>
+      <a href="#contact" class="btn-ghost">Voir tous les projets</a>
+    </div>
+
+    <div class="portfolio-grid">
+      <!--
+        EMPLACEMENTS IMAGES PORTFOLIO :
+        Remplacez chaque .port-placeholder par une <img> de vos réalisations.
+        Assurez-vous que chaque image remplit bien son conteneur avec object-fit: cover.
+        Exemple :
+        <img src="images/projet-1.webp" alt="Site e-commerce client" style="width:100%;height:100%;object-fit:cover;display:block;" />
+        Les 5 emplacements correspondent aux cases de la grille asymétrique.
+      -->
+      <div class="portfolio-item reveal">
+        <img src="images/Capture d’écran_214242_nourmarket.authentik.tech.PNG" alt="Site e-commerce client" style="width:100%;height:100%;object-fit:cover;display:block;" />
+        <div class="port-overlay">
+          <div class="port-info">
+            <div class="port-cat">Site E-commerce</div>
+            <div class="port-name">Boutique en ligne premium</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item reveal" style="transition-delay:0.1s">
+        <img src="images/missmuslimah.authentik.tech.PNG" alt="Site e-commerce client" style="width:100%;height:100%;object-fit:cover;display:block;" />
+        <div class="port-overlay">
+          <div class="port-info">
+            <div class="port-cat">Site E-commerce</div>
+            <div class="port-name">Boutique en ligne Miss Muslimah</div>
+          </div>
+        </div>
+      </div>
+
+<!--      <div class="portfolio-item reveal" style="transition-delay:0.15s">
+        <div class="port-placeholder">Projet 3</div>
+        <div class="port-overlay">
+          <div class="port-info">
+            <div class="port-cat">Application Mobile</div>
+            <div class="port-name">App de livraison</div>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="portfolio-item reveal" style="transition-delay:0.2s">
+        <img src="images/idv.jpeg" alt="Identité visuelle client" style="width:100%;height:100%;object-fit:cover;display:block;" />
+        <div class="port-overlay">
+          <div class="port-info">
+            <div class="port-cat">Logo & Identité</div>
+            <div class="port-name">Identité visuelle</div>
+          </div>
+        </div>
+      </div>
+
+<!--      <div class="portfolio-item reveal" style="transition-delay:0.25s">
+        <div class="port-placeholder">Projet 5</div>
+        <div class="port-overlay">
+          <div class="port-info">
+            <div class="port-cat">Community Management</div>
+            <div class="port-name">Restaurant & Food</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+</section>
+
+<!-- ===================================================
+     CONTACT
+     =================================================== -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <span class="tag reveal">Contact</span>
+        <h2 class="section-title reveal">
+          Prêt à lancer<br/>
+          <em>votre projet ?</em>
+        </h2>
+        <div class="divider reveal"></div>
+        <p class="section-sub reveal">
+          Une idée, un projet, une question ? Parlez-nous de votre besoin et recevez une réponse personnalisée sous 24h. Aucun engagement, juste un échange sincère.
+        </p>
+
+        <div class="contact-channels reveal">
+          <div class="contact-channel">
+            <div class="channel-icon">
+              <!-- WhatsApp icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+            </div>
+            <div>
+              <div class="channel-label">WhatsApp</div>
+              <!--
+                Remplacez le numéro ci-dessous par votre numéro WhatsApp.
+                Format international sans espaces ni +. Ex: 33612345678
+              -->
+              <div class="channel-value">0788946827</div>
+            </div>
+          </div>
+          <div class="contact-channel">
+            <div class="channel-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="channel-label">Email</div>
+              <!--
+                Remplacez par votre adresse email professionnelle.
+              -->
+              <div class="channel-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="03606c6d77626077436276776b666d776a607766606b2d606c6e">info@authentic.tech</a></div>
+            </div>
+          </div>
+          <div class="contact-channel">
+            <div class="channel-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <div class="channel-label">Disponibilité</div>
+              <div class="channel-value">7 jours sur 7</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORM ─────────────────────────────────────────────
+           Remplacez YOUR_FORM_ID par votre identifiant Formspree.
+           Exemple : action="https://formspree.io/f/xabcdefg"
+           Créez votre formulaire gratuit sur formspree.io
+      ──────────────────────────────────────────────────── -->
+      <div class="contact-form-wrap reveal" style="transition-delay:0.15s">
+        <div id="form-content">
+          <div class="form-title">Parlez-nous de vous</div>
+          <div class="form-sub">Réponse garantie sous 24h — souvent bien avant.</div>
+
+          <form id="contact-form" action="https://formspree.io/f/xnjopqgy" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="prenom">Prénom</label>
+                <input class="form-input" type="text" id="prenom" name="prenom" placeholder="hamed" required />
+                <span class="form-hint" id="hint-prenom"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="nom">Nom</label>
+                <input class="form-input" type="text" id="nom" name="nom" placeholder="coulibaly" required />
+                <span class="form-hint" id="hint-nom"></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="email">Email</label>
+              <input class="form-input" type="email" id="email" name="email" placeholder="coulibaly@example.com" required />
+              <span class="form-hint" id="hint-email"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="service">Service souhaité</label>
+              <select class="form-select" id="service" name="service">
+                <option value="" disabled selected>Choisissez un service…</option>
+                <option value="site-vitrine">Site Vitrine</option>
+                <option value="ecommerce">Site E-commerce</option>
+                <option value="app-mobile">Application Mobile</option>
+                <option value="community">Community Management</option>
+                <option value="logo-affiche">Logo & Affiche</option>
+                <option value="autre">Autre / Combinaison</option>
+              </select>
+              <span class="form-hint" id="hint-service"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="message">Votre projet en quelques mots</label>
+              <textarea class="form-textarea" id="message" name="message" placeholder="Décrivez votre activité et ce que vous souhaitez réaliser…" required></textarea>
+              <span class="form-hint" id="hint-message"></span>
+            </div>
+
+            <button type="submit" class="form-submit" id="submit-btn">
+              <span id="submit-text">Envoyer ma demande</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+          </form>
+        </div>
+
+        <!-- Success state -->
+        <div class="form-success" id="form-success">
+          <div class="success-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>Message envoyé !</h3>
+          <p>Merci pour votre message. Nous vous répondrons dans les plus brefs délais, généralement sous 24h.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================
+     FOOTER
+     =================================================== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-wrap">
+          <!--
+            EMPLACEMENT LOGO FOOTER :
+            Utilisez le même logo qu'en header (version blanche ou dorée).
+            <img src="images/logo.svg" alt="Authentic Tech" height="32" />
+          -->
+          <img src="images/LOGO_AUTHENTIC-removebg-preview.png" alt="Authentic Tech" height="60" />
+        </div>
+        <p class="footer-tagline">Solutions digitales et communication visuelle pour les marques qui veulent se démarquer.</p>
+        <div class="footer-socials">
+          <!-- Instagram -->
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <!-- Facebook -->
+          <a href="#" class="social-link" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <!-- LinkedIn -->
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Services</div>
+        <ul class="footer-links">
+          <li><a href="#services">Site Vitrine</a></li>
+          <li><a href="#services">Site E-commerce</a></li>
+          <li><a href="#services">Application Mobile</a></li>
+          <li><a href="#services">Community Manager</a></li>
+          <li><a href="#services">Logo & Affiche</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Entreprise</div>
+        <ul class="footer-links">
+          <li><a href="#about">À propos</a></li>
+          <li><a href="#portfolio">Réalisations</a></li>
+          <li><a href="#why">Notre méthode</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Légal</div>
+        <ul class="footer-links">
+          <li><a href="#">Mentions légales</a></li>
+          <li><a href="#">Politique de confidentialité</a></li>
+          <li><a href="#">CGV</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 <a href="#">Authentic Tech</a> — Tous droits réservés.</p>
+      <p class="footer-copy">Conçu avec soin ✦</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Bouton retour en haut -->
+<button class="back-to-top" id="back-to-top" aria-label="Retour en haut">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<!-- ══════════════════════════════════════════════════════
+     📌 BOUTON WHATSAPP FLOTTANT
+     ══════════════════════════════════════════════════════
+     Remplacez VOTRE_NUMERO dans le JavaScript ci-dessous.
+     
+     Format : code pays + numéro SANS le + et SANS espaces
+     Exemples :
+       Togo          → 22890123456
+       Côte d'Ivoire → 22507123456
+       Sénégal       → 221771234567
+       France        → 33612345678
+       Cameroun      → 237691234567
+     
+     Cherchez : const numero = 'VOTRE_NUMERO';
+══════════════════════════════════════════════════════ -->
+<div class="whatsapp-float" id="wa-float">
+  <div class="wa-tooltip" id="wa-tooltip">
+    <strong>Authentic Tech</strong>
+    Cliquez pour nous contacter
+  </div>
+  <button class="wa-btn" id="wa-btn" onclick="openWhatsApp()" aria-label="Contacter via WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </button>
+</div>
+
+<!-- ===================================================
+     JAVASCRIPT
+     =================================================== -->
+<!-- ================================================================
+     JavaScript principal (interactions, formulaire, WhatsApp…)
+     ⚙ Ouvrez js/main.js pour configurer VOTRE_NUMERO WhatsApp
+     ================================================================ -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

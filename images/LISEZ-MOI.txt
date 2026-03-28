@@ -1,0 +1,44 @@
+DOSSIER IMAGES — Authentic Tech
+================================
+
+Placez ici toutes vos images selon les noms indiqués ci-dessous.
+
+LOGO
+----
+logo.svg          → Votre logo principal (SVG transparent recommandé)
+                    Utilisé dans le HEADER (fond clair #f4f3ef)
+logo-dark.svg     → Version pour fond sombre — optionnel
+                    Utilisé dans le FOOTER (fond #1e1c18)
+
+HERO (optionnel — remplace l'animation 3D du globe)
+----
+hero.webp         → 600×480px min — mockup de site ou ambiance digitale
+
+ÉQUIPE (optionnel — remplace l'animation 3D de l'équipe)
+------
+equipe.webp       → 480×600px min — ratio portrait 4:5
+                    Photo équipe dans votre espace de travail
+
+SERVICES (800×500px recommandé — tons sombres pour la lisibilité)
+---------
+service-vitrine.webp      → Écran avec un beau site web affiché
+service-ecommerce.webp    → Boutique en ligne, produits mis en scène
+service-app.webp          → Smartphone avec application affichée
+service-community.webp    → Réseaux sociaux, téléphone, feed
+service-logo.webp         → Table créative, croquis, identité visuelle
+
+PORTFOLIO (vos vraies réalisations)
+---------
+projet-1.webp    → Grande case principale  — 900×420px
+projet-2.webp    → Case standard           — 450×360px
+projet-3.webp    → Case standard           — 450×360px
+projet-4.webp    → Case standard           — 450×360px
+projet-5.webp    → Case standard           — 450×360px
+
+CONSEILS
+--------
+• Format WebP = meilleure qualité + poids réduit
+• Convertisseur gratuit : https://squoosh.app
+• Max 200Ko par image après compression
+• Nommez vos fichiers EXACTEMENT comme ci-dessus
+  ou adaptez les chemins url('...') dans index.html
