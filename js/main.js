@@ -255,7 +255,7 @@
   });
 
   function openWhatsApp() {
-    const numero = 'VOTRE_NUMERO';
+    const numero = '2250788946827';
     const heure = new Date().getHours();
     const salutation = (heure >= 6 && heure < 18) ? 'Bonjour' : 'Bonsoir';
     const message = encodeURIComponent(
